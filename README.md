@@ -30,8 +30,11 @@ Current setup also supports a practical fallback flow:
 ## Files
 
 - `src/reply-to-codex.tsx`: Raycast UI
+- `src/approve-codex-action.tsx`: Raycast UI for single-key approvals
 - `scripts/request-reply.sh`: open Raycast with a prompt
 - `scripts/wait-for-reply.sh`: open Raycast and block until a reply arrives
+- `scripts/wait-for-approval.sh`: open Raycast and wait for a one-key approval reply
+- `scripts/run-approval-watcher.sh`: watch Codex rollouts for approval prompts and send a key to Warp
 
 ## Install
 
@@ -56,8 +59,15 @@ Wait in a terminal workflow:
 ./scripts/wait-for-reply.sh "Need your answer here"
 ```
 
+Run the approval watcher:
+
+```bash
+./scripts/run-approval-watcher.sh
+```
+
 ## Notes
 
 - The deeplink path assumes local extension owner `sebas` and extension name `raycast-codex-reply`
 - Adjust the deeplink in `scripts/request-reply.sh` if Raycast assigns a different owner/name on import
 - In Sebas's current local setup, `~/.codex/hooks/notify_macos.sh` can use this repo as the human-reply bridge
+- The approval watcher is separate from `notify`; it watches the latest Codex rollout for approval prompts that start with `Do you want me to `

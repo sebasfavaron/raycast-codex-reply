@@ -37,6 +37,14 @@
       "description": "Open a minimal reply form for the current Codex prompt",
       "mode": "view",
       "icon": "icon.png"
+    },
+    {
+      "name": "approve-codex-action",
+      "title": "Approve Codex Action",
+      "subtitle": "Send y or n",
+      "description": "Choose a single-letter approval response for a pending Codex permission prompt",
+      "mode": "view",
+      "icon": "icon.png"
     }
   ]
 }
