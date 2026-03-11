@@ -1,0 +1,42 @@
+{
+  "name": "raycast-codex-reply",
+  "title": "Codex Reply",
+  "version": "0.1.0",
+  "description": "Local Raycast extension that collects short replies for Codex prompts.",
+  "private": true,
+  "author": "sebas",
+  "license": "MIT",
+  "platforms": [
+    "macOS"
+  ],
+  "categories": [
+    "Developer Tools"
+  ],
+  "icon": "icon.png",
+  "scripts": {
+    "dev": "ray develop",
+    "build": "ray build -e dist",
+    "lint": "ray lint"
+  },
+  "dependencies": {
+    "@raycast/api": "^1.104.0",
+    "@raycast/utils": "^2.2.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.1.0",
+    "@types/node": "^24.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.8.0"
+  },
+  "commands": [
+    {
+      "name": "reply-to-codex",
+      "title": "Reply to Codex",
+      "subtitle": "Answer pending prompt",
+      "description": "Open a minimal reply form for the current Codex prompt",
+      "mode": "view",
+      "icon": "icon.png"
+    }
+  ]
+}
